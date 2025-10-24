@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment & secret files
+.env
+.env.local
+.env.*.local
+backend/.env
+backend/serviceAccountKey.json
