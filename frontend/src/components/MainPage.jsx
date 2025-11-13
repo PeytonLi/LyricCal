@@ -188,7 +188,7 @@ const MainPage = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-800 via-purple-600 to-blue-700">
+            <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-purple-800 via-purple-600 to-blue-700">
                 <div className="text-xl text-white">Loading...</div>
             </div>
         );
@@ -203,6 +203,14 @@ const MainPage = () => {
                         <Music className="h-8 w-8 text-white" />
                         <h1 className="text-2xl font-bold">LyricCal</h1>
                     </div>
+                    <Button
+                        variant="outline"
+                        className="text-white border-white/30 hover:bg-white/5"
+                        onClick={() => navigate("/search")}
+                    >
+                        Search
+                    </Button>
+
                     <Button
                         variant="outline"
                         className="text-white border-white/30 hover:bg-white/5"
