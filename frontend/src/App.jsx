@@ -1,16 +1,16 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { AuthForm, MainPage } from "./components";
-import SearchPage from "./components/SearchPage"; // searchPage
+import IntroPage from "./components/IntroPage";
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="w-full">
       <Routes>
+        <Route path="/" element={<IntroPage />} />
+        <Route path="/app" element={<MainPage />} />
         <Route path="/auth" element={<AuthForm />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/search" element={<SearchPage />} /> 
-        <Route path="*" element={<AuthForm />} /> {/* fallback */}
+        <Route path="*" element={<IntroPage />} /> {/* fallback */}
       </Routes>
     </div>
   );
