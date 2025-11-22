@@ -48,7 +48,7 @@ const IntroPage = () => {
 
 
                 <span className="block">
-                  LyriCal finds the track that feels right.
+                  LyricCal finds the track that feels right.
                 </span>
               </h1>
             </div>
@@ -83,7 +83,7 @@ const IntroPage = () => {
               </h2>
               <p className="text-sm md:text-base text-white/80 leading-relaxed">
                 Whether you&apos;re working, unwinding, or getting ready to go
-                out, LyriCal understands the emotions in lyrics and pairs them
+                out, LyricCal understands the emotions in lyrics and pairs them
                 with acoustic features to recommend the perfect track.
               </p>
 
@@ -100,7 +100,7 @@ const IntroPage = () => {
 
               <p className="text-xs md:text-sm text-white/60">
                 No playlists to manage, no genres to guess. Just describe how
-                you feel and let LyriCal handle the rest.
+                you feel and let LyricCal handle the rest.
               </p>
             </div>
           </aside>
@@ -124,11 +124,11 @@ const IntroPage = () => {
                 arises when they get sick of listening to the same songs on repeat, but don’t
                 know what else to do. That’s where we have a solution.
                 <br /><br />
-                LyriCal hopes to deliver a machine learning web app that classifies songs based
+                LyricCal hopes to deliver a machine learning web app that classifies songs based
                 on the emotions expressed in their lyrics — such as happiness, anger, calmness,
                 or intensity — and pairs those results with acoustic features.
                 <br /><br />
-                With LyriCal, users will finally be able to discover new music that perfectly
+                With LyricCal, users will finally be able to discover new music that perfectly
                 matches their vibe and emotional state.
               </p>
 
@@ -148,7 +148,7 @@ const IntroPage = () => {
       active:scale-[0.98]
       transition-all duration-200"
             >
-              Try LyriCal
+              Try LyricCal
             </button>
 
             <span className="mt-3 text-sm md:text-base text-white/60 text-center">
