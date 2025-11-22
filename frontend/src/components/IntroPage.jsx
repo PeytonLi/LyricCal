@@ -15,7 +15,7 @@ const IntroPage = () => {
           </div>
           <span className="relative inline-block font-extrabold tracking-tight text-2xl md:text-3xl">
             {/* 텍스트 */}
-            <span className="text-white">Lyri</span>
+            <span className="text-white">Lyric</span>
             <span className="bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent">
               Cal
             </span>
