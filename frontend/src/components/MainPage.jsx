@@ -131,7 +131,7 @@ const MainPage = () => {
                         placeholder="Enter song title"
                         value={songQuery}
                         onChange={(e) => setSongQuery(e.target.value)}
-                        className="w-full px-5 py-3 bg-white/15 rounded-xl text-white placeholder-white/60"
+                        className="w-full px-5 py-3 bg-white/15 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-1 transition"
                     />
 
                     <input
@@ -139,7 +139,7 @@ const MainPage = () => {
                         placeholder="Enter artist name"
                         value={artistQuery}
                         onChange={(e) => setArtistQuery(e.target.value)}
-                        className="w-full px-5 py-3 bg-white/15 rounded-xl text-white placeholder-white/60"
+                        className="w-full px-5 py-3 bg-white/15 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-1 transition"
                     />
 
                     <input
@@ -148,18 +148,19 @@ const MainPage = () => {
                         max="20"
                         value={numRecs}
                         onChange={(e) => setNumRecs(e.target.value)}
-                        className="w-full px-5 py-3 bg-white/15 rounded-xl text-white placeholder-white/60"
                         placeholder="Number of recommendations"
+                        className="w-full px-5 py-3 bg-white/15 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-1 transition"
                     />
 
                     <button
                         onClick={handleSearch}
                         disabled={loading}
-                        className="hover:cursor-pointer w-full px-5 py-3 bg-purple-600 hover:bg-purple-500 rounded-xl font-semibold"
+                        className="w-full px-5 py-3 bg-purple-600 hover:bg-purple-500 rounded-xl font-semibold transition"
                     >
                         {loading ? "Loading..." : "Get Recommendations"}
                     </button>
                 </div>
+
 
                 {/* ERRORS */}
                 {error && (
