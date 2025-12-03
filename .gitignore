@@ -30,3 +30,18 @@ dist-ssr
 backend/.env
 backend/serviceAccountKey.json
 
+backend/preprocessed_songs_df.csv
+backend/songs_df.csv
+
+venv/
+*.pyd
+*.dll
+*.lib
+*.h5
+*.keras
+*.pt
+*.pth
+*.ckpt
+*.csv
+!small_dataset.csv   # whitelist if needed
+__pycache__/
