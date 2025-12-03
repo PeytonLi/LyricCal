@@ -8,7 +8,7 @@ function App() {
     <div className="w-full">
       <Routes>
         <Route path="/" element={<IntroPage />} />
-        <Route path="/app" element={<MainPage />} />
+        <Route path="/home" element={<MainPage />} />
         <Route path="/auth" element={<AuthForm />} />
         <Route path="*" element={<IntroPage />} /> {/* fallback */}
       </Routes>

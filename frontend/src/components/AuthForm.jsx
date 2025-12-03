@@ -19,7 +19,7 @@ export default function AuthForm() {
       } else {
         await createUserWithEmailAndPassword(auth, email, password);
       }
-      navigate("/main");
+      navigate("/home");
     } catch (err) {
       alert(err.message || "Authentication error");
     } finally {

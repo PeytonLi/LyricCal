@@ -140,8 +140,8 @@ const IntroPage = () => {
           {/* CTA — We got you covered */}
           <div className="flex flex-col items-center mt-8">
             <button
-              onClick={() => navigate("/app")}
-              className="px-10 py-4 text-lg font-semibold rounded-full
+              onClick={() => navigate("/home")}
+              className="hover:cursor-pointer px-10 py-4 text-lg font-semibold rounded-full
       bg-gradient-to-r from-purple-500 via-fuchsia-500 to-purple-400
       text-white shadow-xl shadow-purple-900/40
       hover:from-purple-400 hover:via-fuchsia-400 hover:to-purple-300
