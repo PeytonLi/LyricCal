@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db, signOut } from "../firebase";
@@ -12,6 +13,7 @@ const MainPage = () => {
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
     const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
@@ -96,41 +98,62 @@ const MainPage = () => {
     }
 
     return (
-        <div className="min-h-screen w-full bg-gradient-to-b from-purple-900 via-purple-800 to-purple-700 text-white">
-            {/* Header Bar */}
-            <header className="w-full px-6 md:px-8 py-4 border-b border-white/10">
-                <div className="flex items-center justify-between">
-                    {/* Left: Logo */}
-                    <span className="relative inline-block font-extrabold tracking-tight text-2xl md:text-3xl">
-                        {/* 텍스트 */}
-                        <span className="text-white">Lyric</span>
-                        <span className="bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent">
-                            Cal
+            <div className="min-h-screen w-full bg-gradient-to-b from-purple-900 via-purple-800 to-purple-700 text-white">
+                {/* Header Bar */}
+                <header className="w-full px-6 md:px-8 py-4 border-b border-white/10">
+                    <div className="flex items-center justify-between">
+                        {/* Left: Logo */}
+                        <span className="relative inline-block font-extrabold tracking-tight text-2xl md:text-3xl">
+                            {/* 텍스트 */}
+                            <span className="text-white">Lyric</span>
+                            <span className="bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent">
+                                Cal
+                            </span>
+
                         </span>
 
-                    </span>
+                        {/* Right: Menu Button + Dropdown */}
+                        <div className="relative">
+                            <button 
+                                onClick={() => setMenuOpen(!menuOpen)}
+                                className="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                                <Menu className="h-6 w-6 text-white" />
+                            </button>
+                            {menuOpen && (
+                                <React.Fragment>
+                                    {/*Background overlay - clicking closes menu */}
+                                    <div
+                                        className="fixed inset-0 z-10"
+                                        onClick={() => setMenuOpen(false)}
+                                    />
 
-                    {/* Right: Buttons and Menu */}
-                    <div className="flex items-center gap-2">
-                        <button
-                            onClick={() => navigate("/")}
-                            className="px-4 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                        >
-                            Back to Intro
-                        </button>
-                        <button
-                            onClick={handleLogout}
-                            className="px-4 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors flex items-center gap-2"
-                        >
-                            <LogOut className="h-4 w-4" />
-                            Logout
-                        </button>
-                        <button className="p-2 hover:bg-white/10 rounded-lg transition-colors">
-                            <Menu className="h-6 w-6 text-white" />
-                        </button>
+                                    {/* Dropdown Menu */}
+                                    <div className="absolute right-0 mt-2 w-48 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg z-20">
+                                        <button
+                                            onClick={() => {
+                                                navigate("/");
+                                                setMenuOpen(false);
+                                            }}
+                                            className="px-4 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                                        >
+                                            Back to Intro
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                handleLogout();
+                                                setMenuOpen(false);
+                                            }}
+                                            className="px-4 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors flex items-center gap-2"
+                                        >
+                                            <LogOut className="h-4 w-4" />
+                                            Logout
+                                        </button>
+                                    </div>
+                                </React.Fragment>
+                            )}
+                        </div>
                     </div>
-                </div>
-            </header>
+                </header>              
 
             {/* Main Content */}
             <main className="w-full px-6 md:px-8 py-8 max-w-7xl mx-auto">
